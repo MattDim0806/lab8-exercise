@@ -1,24 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zoz-I4-Eze">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--龜兔賽跑-->
+        <scene sceneID="89O-Tv-WkC">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="4Fo-cQ-Ei5" customClass="raceVC" customModule="lab8_exercise" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mch-kZ-tcB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="龜兔賽跑" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWR-IN-4F1">
+                                <rect key="frame" x="45" y="68" width="98" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="兔子" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jxW-b3-D8O">
+                                <rect key="frame" x="45" y="117" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="烏龜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1b-ce-VYL">
+                                <rect key="frame" x="45" y="158" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bjG-09-0qh">
+                                <rect key="frame" x="97" y="125" width="272" height="4"/>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5On-kH-OMS">
+                                <rect key="frame" x="181.5" y="210" width="51" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="開始"/>
+                                <connections>
+                                    <action selector="startBtn:" destination="4Fo-cQ-Ei5" eventType="touchDown" id="coc-67-143"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="6z2-yi-Uqx">
+                                <rect key="frame" x="97" y="166" width="272" height="4"/>
+                            </progressView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZzO-Eg-DzW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bjG-09-0qh" firstAttribute="leading" secondItem="jxW-b3-D8O" secondAttribute="trailing" constant="17" id="7VA-K8-f1I"/>
+                            <constraint firstItem="ZzO-Eg-DzW" firstAttribute="trailing" secondItem="bjG-09-0qh" secondAttribute="trailing" constant="45" id="AXK-Kd-fEQ"/>
+                            <constraint firstItem="jxW-b3-D8O" firstAttribute="top" secondItem="AWR-IN-4F1" secondAttribute="bottom" constant="20" id="GGC-Ng-i9G"/>
+                            <constraint firstItem="bjG-09-0qh" firstAttribute="top" secondItem="AWR-IN-4F1" secondAttribute="bottom" constant="28" id="NVx-IW-V6h"/>
+                            <constraint firstItem="jxW-b3-D8O" firstAttribute="leading" secondItem="ZzO-Eg-DzW" secondAttribute="leading" constant="45" id="Oxs-bH-o8v"/>
+                            <constraint firstItem="z1b-ce-VYL" firstAttribute="leading" secondItem="ZzO-Eg-DzW" secondAttribute="leading" constant="45" id="R65-ZK-JDX"/>
+                            <constraint firstItem="5On-kH-OMS" firstAttribute="top" secondItem="6z2-yi-Uqx" secondAttribute="bottom" constant="40" id="TDJ-jS-eQx"/>
+                            <constraint firstItem="6z2-yi-Uqx" firstAttribute="top" secondItem="bjG-09-0qh" secondAttribute="bottom" constant="37" id="Tn0-8N-UvV"/>
+                            <constraint firstItem="ZzO-Eg-DzW" firstAttribute="trailing" secondItem="6z2-yi-Uqx" secondAttribute="trailing" constant="45" id="csN-fm-bBA"/>
+                            <constraint firstItem="AWR-IN-4F1" firstAttribute="leading" secondItem="ZzO-Eg-DzW" secondAttribute="leading" constant="45" id="gXs-0z-i5T"/>
+                            <constraint firstItem="z1b-ce-VYL" firstAttribute="top" secondItem="jxW-b3-D8O" secondAttribute="bottom" constant="20" id="gYy-sY-5it"/>
+                            <constraint firstItem="6z2-yi-Uqx" firstAttribute="leading" secondItem="z1b-ce-VYL" secondAttribute="trailing" constant="17" id="kR6-Y6-IZO"/>
+                            <constraint firstItem="AWR-IN-4F1" firstAttribute="top" secondItem="ZzO-Eg-DzW" secondAttribute="top" constant="20" id="m8S-1R-D2a"/>
+                            <constraint firstItem="5On-kH-OMS" firstAttribute="centerX" secondItem="mch-kZ-tcB" secondAttribute="centerX" id="wVP-xI-4po"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="龜兔賽跑" image="tortoise.fill" catalog="system" id="YuK-mz-Lrl"/>
+                    <connections>
+                        <outlet property="rabbitProgress" destination="bjG-09-0qh" id="40g-mu-gJc"/>
+                        <outlet property="turtleProgress" destination="6z2-yi-Uqx" id="xXP-h0-81L"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fsB-Qd-vgl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="618.84057971014499" y="-299.33035714285711"/>
+        </scene>
+        <!--矩陣運算-->
+        <scene sceneID="NzW-Tb-CVh">
+            <objects>
+                <viewController id="2OU-Dm-vMd" customClass="matrixCountVC" customModule="lab8_exercise" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gdm-Xd-D8K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="陣列1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uC6-ad-ndk">
+                                <rect key="frame" x="0.0" y="68" width="207" height="207"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uC6-ad-ndk" secondAttribute="height" multiplier="1:1" id="REW-YC-Edp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="陣列2" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="1gI-TQ-JKV">
+                                <rect key="frame" x="207" y="68" width="207" height="207"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1gI-TQ-JKV" secondAttribute="height" multiplier="1:1" id="4FB-52-XlL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="陣列3" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EXB-Tb-Nvn">
+                                <rect key="frame" x="20" y="275" width="374" height="374"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EXB-Tb-Nvn" secondAttribute="height" multiplier="1:1" id="cnK-kD-FRO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hC-Jz-QsE">
+                                <rect key="frame" x="25" y="649" width="364" height="30"/>
+                                <state key="normal" title="產生兩矩陣並相乘"/>
+                                <connections>
+                                    <action selector="createMatrix:" destination="2OU-Dm-vMd" eventType="touchUpInside" id="tdb-ad-Yo2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1SJ-7W-oNk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="EXB-Tb-Nvn" firstAttribute="centerX" secondItem="gdm-Xd-D8K" secondAttribute="centerX" id="0ql-6I-RX8"/>
+                            <constraint firstItem="2hC-Jz-QsE" firstAttribute="leading" secondItem="1SJ-7W-oNk" secondAttribute="leading" constant="25" id="16w-mA-gc2"/>
+                            <constraint firstItem="1gI-TQ-JKV" firstAttribute="width" secondItem="uC6-ad-ndk" secondAttribute="width" id="4M3-DQ-6bX"/>
+                            <constraint firstItem="1SJ-7W-oNk" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="2hC-Jz-QsE" secondAttribute="bottom" constant="10" id="OBK-QL-ebR"/>
+                            <constraint firstItem="uC6-ad-ndk" firstAttribute="top" secondItem="1SJ-7W-oNk" secondAttribute="top" constant="20" id="TtD-76-H6A"/>
+                            <constraint firstItem="1gI-TQ-JKV" firstAttribute="top" secondItem="1SJ-7W-oNk" secondAttribute="top" constant="20" id="W3O-4D-bVP"/>
+                            <constraint firstItem="1SJ-7W-oNk" firstAttribute="trailing" secondItem="2hC-Jz-QsE" secondAttribute="trailing" constant="25" id="W5s-TA-cOI"/>
+                            <constraint firstItem="1SJ-7W-oNk" firstAttribute="trailing" secondItem="EXB-Tb-Nvn" secondAttribute="trailing" constant="20" id="W6u-MI-Ilw"/>
+                            <constraint firstItem="1gI-TQ-JKV" firstAttribute="leading" secondItem="uC6-ad-ndk" secondAttribute="trailing" id="ZFf-9z-HA3"/>
+                            <constraint firstItem="2hC-Jz-QsE" firstAttribute="top" secondItem="EXB-Tb-Nvn" secondAttribute="bottom" id="mUB-0k-xnk"/>
+                            <constraint firstItem="1SJ-7W-oNk" firstAttribute="trailing" secondItem="1gI-TQ-JKV" secondAttribute="trailing" id="tbn-1D-vWn"/>
+                            <constraint firstItem="uC6-ad-ndk" firstAttribute="leading" secondItem="1SJ-7W-oNk" secondAttribute="leading" id="tvH-Zf-x3N"/>
+                            <constraint firstItem="EXB-Tb-Nvn" firstAttribute="top" secondItem="uC6-ad-ndk" secondAttribute="bottom" id="yJ5-6P-EeA"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="矩陣運算" image="hare.fill" catalog="system" id="b4W-aL-uYg"/>
+                    <connections>
+                        <outlet property="matrix1Label" destination="uC6-ad-ndk" id="enZ-xu-r3P"/>
+                        <outlet property="matrix2Label" destination="1gI-TQ-JKV" id="I2z-gP-yNn"/>
+                        <outlet property="matrix3Label" destination="EXB-Tb-Nvn" id="FEl-eh-34R"/>
+                        <outlet property="startBtn" destination="2hC-Jz-QsE" id="y6B-Ge-kfj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AZm-Po-U1t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="618.84057971014499" y="403.79464285714283"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="STU-fA-W5U">
+            <objects>
+                <tabBarController id="Zoz-I4-Eze" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m1e-Ie-6zS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <tabBarAppearance key="scrollEdgeAppearance"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="4Fo-cQ-Ei5" kind="relationship" relationship="viewControllers" id="H63-Ew-fSV"/>
+                        <segue destination="2OU-Dm-vMd" kind="relationship" relationship="viewControllers" id="q7u-Nt-A4Q"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kEn-cN-p1f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-313" y="42"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="hare.fill" catalog="system" width="128" height="88"/>
+        <image name="tortoise.fill" catalog="system" width="128" height="64"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
